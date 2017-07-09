@@ -1,0 +1,25 @@
+.light-button {
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.light-button.yellow {
+    background-color: yellow;
+}
+
+.light-button.blue {
+    background-color: blue;
+}
+
+.light-button.green {
+    background-color: green;
+}
+
+.light-button.red {
+    background-color: red;
+}
+
+.light-button.lit {
+    background-color: white;
+}

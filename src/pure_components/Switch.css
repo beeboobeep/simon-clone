@@ -1,0 +1,26 @@
+.switch {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: black;
+    width: 40px;
+    height: 20px;
+    position: relative;
+}
+
+.switch-button {
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    border-radius: 3px;
+    position: absolute;
+}
+
+.switch-button.switch-on {
+    transition: left 100ms ease;
+    left: 20px;
+}
+
+.switch-button.switch-off {
+    transition: left 100ms ease;
+    left: 0px;
+}

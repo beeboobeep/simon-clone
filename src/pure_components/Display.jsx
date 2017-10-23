@@ -6,9 +6,9 @@ let digits = ''
 const Display = (props) => {
 
     digits = props.isOn? '--' : ' '
-    if(props.isGameRunning && props.isPlayerTurn) {
+    if(props.isGameRunning) {
         digits = props.currentSequence.length
-        if(digits < 9) digits = '0' + digits
+        if(digits <= 9) digits = '0' + digits
     }
 
     return (

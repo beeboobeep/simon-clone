@@ -26,7 +26,7 @@ const gameLogic = (state = initialState, action) => {
         case 'SWITCH_STRICT_MODE':
             return {
                 ...state,
-                isStrict: !state.isStrict
+                isStrict: (state.isOn && !state.isGameRunning)? !state.isStrict : state.isStrict
             }
 
         case 'CREATE_NEXT_SEQUENCE':

@@ -2,19 +2,28 @@ import { generateNumber } from './engine.js'
 import { cpuButtonPress } from '../lightButton'
 
 export const startGame = () => {
-    return dispatch => {
-        dispatch(startGameDispatch())
-        dispatch(takeCpuTurn())
+    return (dispatch, getState) => {
+        let {isOn, isGameRunning} = getState().gameLogic
+        if(isOn && !isGameRunning) {
+            dispatch(startGameDispatch())
+            dispatch(takeCpuTurn())
+        }
     }
 }
 
-export const powerOn = () => {
+export const switchPower = () => {
+    return (dispatch, getState) => {
+        getState().gameLogic.isOn? dispatch(powerOff()) : dispatch(powerOn())
+    }
+}
+
+const powerOn = () => {
     return {
         type: 'POWER_ON'
     }
 }
 
-export const powerOff = () => {
+const powerOff = () => {
     return {
         type: 'POWER_OFF'
     }
@@ -35,14 +44,14 @@ export const createNextSequence = () => {
 
 export const handlePlayerButtonPressed = (id) => {
     return (dispatch, getState) => {
-        let {currentSequence, playerCurrentIndex} = getState().gameLogic
+        let {currentSequence, playerCurrentIndex, isStrict} = getState().gameLogic
         if(currentSequence[playerCurrentIndex]===id) {
             if(playerCurrentIndex === currentSequence.length - 1) {
                 dispatch(takeCpuTurn())
             }
             else dispatch(correctButtonPressed())
         }
-        else dispatch(gameOver())
+        else isStrict? dispatch(gameOver()) : dispatch(repeatCpuTurn())
     }
 }
 
@@ -61,6 +70,19 @@ const correctButtonPressed = () => {
 export const takeCpuTurn = () => {
     return (dispatch, getState) => {
         dispatch(createNextSequence())
+        let state = getState().gameLogic
+        let sequence = state.currentSequence
+        setTimeout(() =>{
+            playSequence(dispatch, sequence)
+            .then(()=>{
+                dispatch(endCpuTurn())
+            })
+        },1000)
+    }   
+}
+
+const repeatCpuTurn = () => {
+    return (dispatch, getState) => {
         let state = getState().gameLogic
         let sequence = state.currentSequence
         setTimeout(() =>{

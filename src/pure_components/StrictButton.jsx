@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import './StartButton.css'
+import './StrictButton.css'
 
 const StrictButton = (props) => {
 
     return (
-        <div onClick={props.onClick}>StrictButton</div>
+        <div className='flex-center-col'>
+            <div id='strict' onClick={props.onClick} />
+            <span>Strict</span>
+        </div>
     )
 }
 

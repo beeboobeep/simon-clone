@@ -83,6 +83,7 @@ export const takeCpuTurn = () => {
 
 const repeatCpuTurn = () => {
     return (dispatch, getState) => {
+        dispatch(endPlayerTurn())
         let state = getState().gameLogic
         let sequence = state.currentSequence
         setTimeout(() =>{
@@ -106,11 +107,11 @@ const endCpuTurn = () => {
     }
 }
 
-// const endPlayerTurn = () => {
-//     return {
-//         type: 'END_PLAYER_TURN'
-//     }
-// }
+const endPlayerTurn = () => {
+    return {
+        type: 'END_PLAYER_TURN'
+    }
+}
 
 const startGameDispatch = () => {
     return {

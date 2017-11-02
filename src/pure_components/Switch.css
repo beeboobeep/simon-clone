@@ -1,23 +1,23 @@
 .switch {
-    border: 2px solid black;
-    border-radius: 5px;
+    border: 0.2em solid black;
+    border-radius: 15%;
     background-color: black;
-    width: 40px;
-    height: 20px;
+    width: 2.6em;
+    height: 1.25em;
     position: relative;
 }
 
 .switch-button {
-    width: 20px;
-    height: 20px;
+    width: 50%;
+    height: 100%;
     background-color: gray;
-    border-radius: 3px;
+    border-radius: 10%;
     position: absolute;
 }
 
 .switch-button.switch-on {
     transition: left 100ms ease;
-    left: 20px;
+    left: 50%;
 }
 
 .switch-button.switch-off {

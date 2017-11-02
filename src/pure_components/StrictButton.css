@@ -1,0 +1,7 @@
+#strict {
+    height: 1.2em;
+    width: 1.2em;
+    border: 0.2em solid black;
+    border-radius: 50%;
+    background-color: yellow;
+}

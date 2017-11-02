@@ -15,7 +15,7 @@ const LightButton = (props) => {
 
 
     return (
-        <div 
+        <div
             className={cssclass} 
             onMouseDown={props.onClickStart}
             onMouseUp={props.onClickEnd}

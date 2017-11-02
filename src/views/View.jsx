@@ -7,15 +7,16 @@ import StrictButton from '../pure_components/StrictButton.jsx'
 import { connect } from 'react-redux'
 import { actions } from '../gameLogic'
 import { startLightButton, endLightButton } from '../lightButton'
+import './View.css' 
 
-const FullUI = (props) => {
+const View = (props) => {
 
     const onClickStart = (id) => {
         if(props.isGameRunning && props.isPlayerTurn) props.startButtonPress(id)
     }
 
     const onClickEnd = (id) => {
-        if(props.isGameRunning) {
+        if(props.isGameRunning && props.isPlayerTurn) {
             props.endButtonPress(id)
             props.handlePlayerButtonPressed(id)
         }
@@ -35,10 +36,17 @@ const FullUI = (props) => {
                     )
                 })
             }
-            <Switch onClick={props.switchPower} isOn={props.isOn}/>
-            <StartButton onClick={props.startGame}/>
-            <StrictButton onClick={props.switchStrict} isStrict={props.isStrict}/>
-            <Display {...props.gameLogic} />
+            <div id='panel'>
+                <div id='title' className='panel-row'>Simon</div>
+                <div className='panel-row'>
+                    <Display {...props.gameLogic} />
+                    <StartButton onClick={props.startGame}/>
+                    <StrictButton onClick={props.switchStrict} isStrict={props.isStrict}/>
+                </div>
+                <div className='panel-row'>
+                    <Switch onClick={props.switchPower} isOn={props.isOn}/>
+                </div>
+            </div>
         </div>
     )
 }
@@ -78,4 +86,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FullUI)
+export default connect(mapStateToProps, mapDispatchToProps)(View)

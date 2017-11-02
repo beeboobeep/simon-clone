@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import './StartButton.css'
+import './StartButton.css'
 
 const StartButton = (props) => {
 
     return (
-        <div onClick={props.onClick}>StartButton</div>
+        <div className='flex-center-col'>
+            <div id='start' onClick={props.onClick} />
+            <span>Start</span>
+        </div>
     )
 }
 

@@ -1,6 +1,6 @@
 ## Simon Game
 
-[Play the game here](https://www.beeboobeep.github.io/simon-clone)
+[Play the game here](https://beeboobeep.github.io/simon-clone)
 
 A clone of the game Simon. Formatted for both desktop and mobile.
 

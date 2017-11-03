@@ -14,17 +14,27 @@ const LightButton = (props) => {
     // props.isLit? osc.start() : osc.stop()
     // props.isLit? console.log(props.note + 'trigger isLit') : console.log(props.note + ' trigger notLit')
 
-
-    return (
-        <div
-            className={cssclass}
-            id={id}
-            onMouseDown={props.onClickStart}
-            onMouseUp={props.onClickEnd}
-            onTouchStart={props.onClickStart}
-            onTouchEnd={props.onClickEnd}
-        />
-    )
+    if (window.matchMedia("(hover: hover)").matches) {
+        return (
+            <div
+                id={id}
+                className={cssclass}
+                onMouseDown={props.onClickStart}
+                onMouseUp={props.onClickEnd}
+                
+            />
+        )
+    } else {
+        return (
+            <div
+                id={id}
+                className={cssclass}
+                onTouchStart={props.onClickStart}
+                onTouchEnd={props.onClickEnd}
+            />
+        )
+    }
+    
 }
 
 LightButton.propTypes = {

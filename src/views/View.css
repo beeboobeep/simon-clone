@@ -50,3 +50,56 @@ html, body {
     display: flex;
     justify-content: space-around;
 }
+@media (max-width: 30em), (max-height: 30em) {
+
+    .FullUI {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: black;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+    }
+    
+    .flex-center-col {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #root {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    #panel {
+        position: absolute;
+        height: 14em;
+        width: 14em;
+        padding: 1em;
+        border-radius: 50%;
+        background-color: rgb(180, 180, 180);
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        border: 0.5em solid black;
+    }
+    
+    #title {
+        font-size: 3em;
+        font-weight: 800;
+    }
+    
+    .panel-row {
+        display: flex;
+        justify-content: space-around;
+    }
+
+} 
+

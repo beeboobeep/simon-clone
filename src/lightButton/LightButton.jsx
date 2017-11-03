@@ -8,7 +8,8 @@ import './LightButton.css'
 const LightButton = (props) => {
 
     let isLit = props.isLit? 'lit' : ''
-    let cssclass = `light-button ${props.color} ${isLit}`
+    let cssclass = `light-button ${isLit}`
+    let id = `${props.color}`
 
     // props.isLit? osc.start() : osc.stop()
     // props.isLit? console.log(props.note + 'trigger isLit') : console.log(props.note + ' trigger notLit')
@@ -16,7 +17,8 @@ const LightButton = (props) => {
 
     return (
         <div
-            className={cssclass} 
+            className={cssclass}
+            id={id}
             onMouseDown={props.onClickStart}
             onMouseUp={props.onClickEnd}
             onTouchStart={props.onClickStart}

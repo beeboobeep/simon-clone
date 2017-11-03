@@ -55,11 +55,11 @@ export const handlePlayerButtonPressed = (id) => {
     }
 }
 
-// const incorrectButtonPressed = () => {
-//     return {
-//         type: 'INCORRECT_BUTTON_PRESSED'
-//     }
-// }
+const incorrectButtonPressed = () => {
+    return {
+        type: 'INCORRECT_BUTTON_PRESSED'
+    }
+}
 
 const correctButtonPressed = () => {
     return {
@@ -83,6 +83,7 @@ export const takeCpuTurn = () => {
 
 const repeatCpuTurn = () => {
     return (dispatch, getState) => {
+        dispatch(incorrectButtonPressed())
         dispatch(endPlayerTurn())
         let state = getState().gameLogic
         let sequence = state.currentSequence

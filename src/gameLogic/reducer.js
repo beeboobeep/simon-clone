@@ -59,7 +59,8 @@ const gameLogic = (state = initialState, action) => {
 
         case 'INCORRECT_BUTTON_PRESSED':
             return {
-                ...state
+                ...state,
+                playerCurrentIndex: 0
             }
 
         case 'CORRECT_BUTTON_PRESSED':

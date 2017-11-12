@@ -4,6 +4,7 @@ import Switch from '../pure_components/Switch.jsx'
 import StartButton from '../pure_components/StartButton.jsx'
 import Display from '../pure_components/Display.jsx'
 import StrictButton from '../pure_components/StrictButton.jsx'
+import StrictStatusLight from '../pure_components/StrictStatusLight.jsx'
 import { connect } from 'react-redux'
 import { actions } from '../gameLogic'
 import { startLightButton, endLightButton } from '../lightButton'
@@ -38,10 +39,13 @@ const View = (props) => {
             }
             <div id='panel'>
                 <div id='title' className='panel-row'>Simon</div>
-                <div className='panel-row'>
+                <div id='panel-buttons' className='panel-row'>
                     <Display {...props.gameLogic} />
                     <StartButton onClick={props.startGame}/>
-                    <StrictButton onClick={props.switchStrict} isStrict={props.isStrict}/>
+                    <div className='panel-col'>
+                        <StrictStatusLight isOn={props.isStrict} />
+                        <StrictButton onClick={props.switchStrict}/>
+                    </div>
                 </div>
                 <div className='panel-row'>
                     <Switch onClick={props.switchPower} isOn={props.isOn}/>

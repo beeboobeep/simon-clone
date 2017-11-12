@@ -43,6 +43,10 @@ html, body {
     border: 0.5em solid black;
 }
 
+#panel-buttons {
+    position: relative;
+}
+
 #title {
     font-size: 3em;
     font-weight: 800;
@@ -105,3 +109,14 @@ html, body {
 
 } 
 
+@media (min-width: 38em) and (min-height:38em) {
+    .FullUI {
+        width: 38em;
+        height: 38em;
+    }
+
+    #panel {
+        height: 18em;
+        width: 18em;
+    }
+}

@@ -1,18 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import Tone from 'tone'
 import './LightButton.css'
-
-// let osc = new Tone.Oscillator(440, 'square').toMaster();
 
 const LightButton = (props) => {
 
     let isLit = props.isLit? 'lit' : ''
     let cssclass = `light-button ${isLit}`
     let id = `${props.color}`
-
-    // props.isLit? osc.start() : osc.stop()
-    // props.isLit? console.log(props.note + 'trigger isLit') : console.log(props.note + ' trigger notLit')
 
     if (window.matchMedia("(hover: hover)").matches) {
         return (

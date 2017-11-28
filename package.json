@@ -8,6 +8,7 @@
     "react-redux": "^5.0.5",
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0",
+    "startaudiocontext": "^1.2.1",
     "tone": "^0.10.0"
   },
   "homepage": "https://beeboobeep.github.io/simon-clone",

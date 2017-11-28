@@ -1,5 +1,7 @@
 import { generateNumber } from './engine.js'
 import { cpuButtonPress } from '../lightButton'
+import { errorSound } from './sounds.js'
+import { startLightButton, endLightButton } from '../lightButton/actions.js'
 
 export const startGame = () => {
     return (dispatch, getState) => {
